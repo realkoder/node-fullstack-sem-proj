@@ -14,3 +14,6 @@ node
 
 ## Bonus notes
 `Const` is constant NOT in the value but in the assignment, meaning that is cannot be reassigned and thus also HAS to be assigned.
+
+### Shortcuts
+WHen inside markdown file press `ctrl + shift + v ` then the file will be displayed with formatting. Pretty nice and convenient.
