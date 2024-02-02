@@ -1,2 +1,2 @@
 # node-fullstack-sem-proj
-node fullstack semester project
+Node fullstack semester project containing notes, thoughts and mandatory hand-ins.
