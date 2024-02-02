@@ -63,7 +63,7 @@ const factModified = (() => {
 console.log(factModified);
 
 // Thought this would work but nah...
-const anotherFactModified = fact.substring(0);
+const anotherFactModified = fact;
 anotherFactModified[17] = "J";
 console.log(anotherFactModified);
 
