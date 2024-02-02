@@ -10,3 +10,7 @@ REPL - `Read Evaluate Print Loop`. A REPL is an interactive programming environm
 ```bash
 node
 ```
+
+
+## Bonus notes
+`Const` is constant NOT in the value but in the assignment, meaning that is cannot be reassigned and thus also HAS to be assigned.
