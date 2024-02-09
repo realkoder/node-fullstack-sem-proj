@@ -45,18 +45,17 @@ The print is because `var` polutes the scope that's why it prints 6 - if let is 
 ## Bonus notes
 `Const` is constant NOT in the value but in the assignment, meaning that is cannot be reassigned and thus also HAS to be assigned.
 <br>
-Javascripts functions is `first-class citizens` this mean:
-Functions can be assigned to a variable, allowing you to reference and call that function using the variable name.
-Functions can be passed as arguments to other functions.
-Functions can be returned from other functions.
-Functions can be stored in arrays, objects, or other data structures.
+* Javascripts functions is `first-class citizens` this mean:
+* Functions can be assigned to a variable, allowing you to reference and call that function using the variable name.
+* Functions can be passed as arguments to other functions.
+* Functions can be returned from other functions.
+* Functions can be stored in arrays, objects, or other data structures.
 <br>
 Javascript is hoisted (`hoisting`) - JIT (just in time compilation) reads all declarations and then execute statements.
 Because of that the below code will work:
 ```javascript
 getRandomInt();
 
-// Classic function
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max + 1 - min) + min);
 }
