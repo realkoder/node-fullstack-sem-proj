@@ -14,6 +14,35 @@ node
 
 ## Bonus notes
 `Const` is constant NOT in the value but in the assignment, meaning that is cannot be reassigned and thus also HAS to be assigned.
+<br>
+Don't use `var` it wont stick to its scope - it will polute outside its scope.
+```javascript
+{
+    var someValue = true;
+    {
+        var someValue = false;
+    }
+    console.log(somevalue);
+}
+```
+This will console log false because var polutes the scopes.
+
+```javascript
+for (var i = 0; i <= 5; i++) {
+    setTimeout(() => {
+        console.log(i);
+    })
+}
+```
+```bash
+6
+6
+6
+6
+6
+6
+```
+The print is because `var` polutes the scope that's why it prints 6 - if let is used the scope for i will stick for the console log inside the arrowhead function.
 
 ### Shortcuts
 WHen inside markdown file press `ctrl + shift + v ` then the file will be displayed with formatting. Pretty nice and convenient.
