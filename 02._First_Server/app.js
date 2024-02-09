@@ -19,13 +19,16 @@ app.get("/thirdRoute/:someValue/:someOtherValue", (req, res) => {
 
 
 let balance = 100;
-app.get("/wallet/:paymentOut", (req, res) => {
-    const paymentOut = Number(req.params.paymentOut);
-    if (paymentOut >= 0 && balance - paymentOut >= 0) {
-        balance = balance - paymentOut;
+app.get("/wallet/:withdrawAmount", (req, res) => {
+    const withdrawAmount = Number(req.params.withdrawAmount);
+    
+    if (!withdrawAmount) res.send({data: "You submitted an incorrect amount, not a number"});
+
+    if (withdrawAmount >= 0 && balance - withdrawAmount >= 0) {
+        balance -= withdrawAmount;
         res.send({ data: `Your payment went through and your current balance is: ${balance}` });
     } else {
-        res.send(`Payment declined - your current balance is: ${balance}`);
+        res.send({data: `Payment declined - your current balance is: ${balance}`});
     }
 });
 
