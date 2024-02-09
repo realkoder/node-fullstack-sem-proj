@@ -61,5 +61,13 @@ function getRandomInt(min, max) {
 }
 ```
 
+
+## CLI COMMANDS
+Get PID for port 8080
+```bash
+lsof -i :8080
+```
+
+
 ### Shortcuts
 WHen inside markdown file press `ctrl + shift + v ` then the file will be displayed with formatting. Pretty nice and convenient.
