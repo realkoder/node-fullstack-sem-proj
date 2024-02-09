@@ -30,12 +30,12 @@ app.get("/drinks/:drinkId", (req, res) => {
 
 // POST drink
 app.post("/drinks", (req, res) => {
-    res.send({ data: mockedDrinks });
+    // Will be implemented later
 });
 
 // PUT drink by ID
 app.put("/drinks/:drinkId", (req, res) => {
-
+    // Will be implemented later
 });
 
 // PATCH drink by ID
