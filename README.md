@@ -11,10 +11,7 @@ REPL - `Read Evaluate Print Loop`. A REPL is an interactive programming environm
 node
 ```
 
-
-## Bonus notes
-`Const` is constant NOT in the value but in the assignment, meaning that is cannot be reassigned and thus also HAS to be assigned.
-<br>
+## The use of var
 Don't use `var` it wont stick to its scope - it will polute outside its scope.
 ```javascript
 {
@@ -43,6 +40,27 @@ for (var i = 0; i <= 5; i++) {
 6
 ```
 The print is because `var` polutes the scope that's why it prints 6 - if let is used the scope for i will stick for the console log inside the arrowhead function.
+
+
+## Bonus notes
+`Const` is constant NOT in the value but in the assignment, meaning that is cannot be reassigned and thus also HAS to be assigned.
+<br>
+Javascripts functions is `first-class citizens` this mean:
+Functions can be assigned to a variable, allowing you to reference and call that function using the variable name.
+Functions can be passed as arguments to other functions.
+Functions can be returned from other functions.
+Functions can be stored in arrays, objects, or other data structures.
+<br>
+Javascript is hoisted (`hoisting`) - JIT (just in time compilation) reads all declarations and then execute statements.
+Because of that the below code will work:
+```javascript
+getRandomInt();
+
+// Classic function
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max + 1 - min) + min);
+}
+```
 
 ### Shortcuts
 WHen inside markdown file press `ctrl + shift + v ` then the file will be displayed with formatting. Pretty nice and convenient.
