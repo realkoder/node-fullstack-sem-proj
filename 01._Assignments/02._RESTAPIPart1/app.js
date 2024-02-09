@@ -20,7 +20,9 @@ app.get("/drinks/:drinkId", (req, res) => {
     const drinkId = Number(req.params.drinkId);
 
     if (!drinkId) res.send({data: "ID is not a number."});
+
     const drink = mockedDrinks.find(drink => drink.id === drinkId);
+    
     if (!drink) res.send({data: "No content"});
 
     res.send({ data: drink });
