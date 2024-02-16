@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 
+// This is needed to work with body for request -> nice to have if working with POST, PUT, PATCH
+app.use(express.json());
+
 app.get("/", (req, res) => {
     res.send({ data: "BOMBAKLAT" });
 });
@@ -32,6 +35,22 @@ app.get("/wallet/:withdrawAmount", (req, res) => {
     }
 });
 
+// localhost:8080/saySomethingNiceAboutMe/hello?handsome=very&tall=indeed&cool=always
+app.get("/saySomethingNiceAboutMe/:greeting", (req, res) => {
+    const providedGreeting = req.params.greeting;
+    console.log(req.query)
+    const providedQueryHandsome = req.query;
+    if (providedQueryHandsome.handsome === "very") {
+        return res.send({data: "thanks cool cat"});
+    }
+
+    res.send({data: "ain't no thang "});
+});
+
+app.post("/postman", (req, res) => {
+    console.log(req.body);
+    res.send(req.body);
+});
 
 // http: 8080
 // https: 443
