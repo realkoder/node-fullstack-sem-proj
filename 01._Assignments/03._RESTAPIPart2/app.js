@@ -45,7 +45,7 @@ app.post("/drinks", (req, res) => {
     const providedDrink = req.body;
     if (Object.keys(providedDrink).length === 1 && providedDrink.hasOwnProperty("name")) {
         const newDrinkId = mockedDrinks.length === 0 ? 1 : mockedDrinks.sort((a, b) => a.id - b.id)[mockedDrinks.length - 1].id + 1;
-        mockedDrinks.push({ ...providedDrink, id: newDrinkId});
+        mockedDrinks.push({ ...providedDrink, id: newDrinkId });
         console.log(mockedDrinks);
         res.send({ data: providedDrink });
     } else {
@@ -64,7 +64,8 @@ app.put("/drinks/:drinkId", (req, res) => {
         return res.status(406).send({ data: "ID is not a number." });
     }
 
-    if (Object.keys(providedDrink).length === 2 && providedDrink.hasOwnProperty("id") && providedDrink.hasOwnProperty("name")) {
+    if (Object.keys(providedDrink).length === 2 && providedDrink.hasOwnProperty("id") && providedDrink.hasOwnProperty("name") &&
+        providedDrinkId === providedDrink.id) {
         if (mockedDrinks.findIndex(drink => drink.id === providedDrinkId) === -1) return res.status(404).send({ data: "NO CONTENT" });
 
         mockedDrinks.map(drink => {
@@ -74,7 +75,7 @@ app.put("/drinks/:drinkId", (req, res) => {
             } else {
                 return drink;
             }
-        });        
+        });
         res.send({ data: providedDrink });
     } else {
         // HTTPSTATUS no content
@@ -103,7 +104,7 @@ app.patch("/drinks/:drinkId", (req, res) => {
             } else {
                 return drink;
             }
-        });        
+        });
         res.send({ data: mockedDrinks.find(drink => drink.id === providedDrinkId) });
     } else {
         // HTTPSTATUS no content
@@ -127,7 +128,7 @@ app.delete("/drinks/:drinkId", (req, res) => {
         // HTTPSTATUS no content if ID isn't existing
         return res.status(404).send({ data: "No content" });
     }
-    
+
     // The request is valid and drink will be deleted
     mockedDrinks = mockedDrinks.filter(drink => {
         if (drink.id !== providedDrinkId) return drink;
