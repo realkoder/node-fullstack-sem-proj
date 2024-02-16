@@ -19,6 +19,7 @@ app.get("/drinks", (req, res) => {
     res.send({ data: mockedDrinks });
 });
 
+
 // GET drink by ID
 app.get("/drinks/:drinkId", (req, res) => {
     const providedDrinkId = Number(req.params.drinkId);
@@ -52,6 +53,7 @@ app.post("/drinks", (req, res) => {
     }
 });
 
+
 // PUT drink by ID
 app.put("/drinks/:drinkId", (req, res) => {
     const providedDrinkId = Number(req.params.drinkId);
@@ -80,6 +82,7 @@ app.put("/drinks/:drinkId", (req, res) => {
     }
 });
 
+
 // PATCH drink by ID
 app.patch("/drinks/:drinkId", (req, res) => {
     const providedDrinkId = Number(req.params.drinkId);
@@ -107,6 +110,7 @@ app.patch("/drinks/:drinkId", (req, res) => {
         res.status(404).send({ data: "The request body isn't correct" });
     }
 });
+
 
 // DELETE drink by ID
 app.delete("/drinks/:drinkId", (req, res) => {
