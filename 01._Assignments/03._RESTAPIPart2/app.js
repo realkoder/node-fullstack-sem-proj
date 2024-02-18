@@ -47,7 +47,8 @@ app.post("/drinks", (req, res) => {
         const newDrinkId = mockedDrinks.length === 0 ? 1 : mockedDrinks.sort((a, b) => a.id - b.id)[mockedDrinks.length - 1].id + 1;
         mockedDrinks.push({ ...providedDrink, id: newDrinkId });
         console.log(mockedDrinks);
-        res.send({ data: providedDrink });
+        // HTTPSTATUS 201 CREATED
+        res.status(201).send({ data: providedDrink });
     } else {
         res.status(406).send({ data: "The request body isn't correct" });
     }
