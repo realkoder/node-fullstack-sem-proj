@@ -134,7 +134,8 @@ app.delete("/drinks/:drinkId", (req, res) => {
     mockedDrinks = mockedDrinks.filter(drink => {
         if (drink.id !== providedDrinkId) return drink;
     });
-    res.send({ data: `Drink with id: ${providedDrinkId} is deleted` });
+    // HTTP STATUS NO CONTENT - cause it's just been deleted xD
+    res.status(204).send({ data: `Drink with id: ${providedDrinkId} is deleted` });
 });
 
 
