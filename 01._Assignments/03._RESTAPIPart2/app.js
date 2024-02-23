@@ -13,6 +13,7 @@ let mockedDrinks = [
     { id: 4, name: "Negroni" }
 ];
 
+let nextId = 4;
 
 // GET drinks
 app.get("/drinks", (req, res) => {
@@ -44,8 +45,9 @@ app.get("/drinks/:drinkId", (req, res) => {
 app.post("/drinks", (req, res) => {
     const providedDrink = req.body;
     if (Object.keys(providedDrink).length === 1 && providedDrink.hasOwnProperty("name")) {
-        const newDrinkId = mockedDrinks.length === 0 ? 1 : mockedDrinks.sort((a, b) => a.id - b.id)[mockedDrinks.length - 1].id + 1;
-        mockedDrinks.push({ ...providedDrink, id: newDrinkId });
+        //const newDrinkId = mockedDrinks.length === 0 ? 1 : mockedDrinks.sort((a, b) => a.id - b.id)[mockedDrinks.length - 1].id + 1;
+
+        mockedDrinks.push({ ...providedDrink, id: nextId });
         console.log(mockedDrinks);
         // HTTPSTATUS 201 CREATED
         res.status(201).send({ data: providedDrink });
@@ -133,9 +135,8 @@ app.delete("/drinks/:drinkId", (req, res) => {
     // The request is valid and drink will be deleted
     mockedDrinks = mockedDrinks.filter(drink => {
         if (drink.id !== providedDrinkId) return drink;
-    });
-    // HTTP STATUS NO CONTENT - cause it's just been deleted xD
-    res.status(204).send({ data: `Drink with id: ${providedDrinkId} is deleted` });
+    });    
+    res.send({ data: `Drink with id: ${providedDrinkId} is deleted` });
 });
 
 

@@ -67,6 +67,20 @@ Get PID for port 8080
 ```bash
 lsof -i :8080
 ```
+<br>
+
+## Date With Javascript
+DATES:
+```javascript
+// UTC
+console.log(new Date());
+
+// Unix Epoch Time (Seconds since 1970 Jan. 1st -> the date is because that year unix was invented)
+console.log(Date.now());
+
+// Local time (in my case right now and here CEST GMT+0100)
+console.log(Date());
+```
 
 
 ### Shortcuts
