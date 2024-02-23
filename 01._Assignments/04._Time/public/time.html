@@ -102,7 +102,7 @@
                 return;
             }
 
-            fetch(`http://worldtimeapi.org/api/timezone/${providedArea}/${providedLocation}`)
+            fetch(`https://worldtimeapi.org/api/timezone/${providedArea}/${providedLocation}`)
                 .then(response => response.json())
                 .then(result => {
                     console.log(result)
