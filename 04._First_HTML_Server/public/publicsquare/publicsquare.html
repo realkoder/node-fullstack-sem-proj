@@ -8,5 +8,20 @@
 <body>
     <h1>BOMBAKLAT!</h1>
 
+    <h1>Known people amount</h1>
+    <h3 id="known-people-amount"></h3>
+
+    <script>
+        const knownPeopleAmount = document.getElementById("known-people-amount");
+        fetchKnownPeopleAmount();
+
+        function fetchKnownPeopleAmount () {            
+            fetch("/knownpeople")
+            .then(response => response.json())
+            .then(result => knownPeopleAmount.textContent = `Amount of known peoples: ${result.data}`);
+        }
+
+    </script>
+
 </body>
 </html>

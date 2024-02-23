@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./homepage.css"> -->
+
+    <style>
+        body {
+            background-color: aqua;
+        }
+    </style>
+
     <title>Homepage</title>
 </head>
+
 <body>
-    
+
     <h1>Does this work?</h1>
 
+    <div id="celebration-box">
+        <h3>Yes it does</h3>
+        <a href="/publicsquare">PUBLICSQUARE</a>
+    </div>    
+
+    <input id="input-name" placeholder="Your name here" />
+    <button onclick="showGreeting()">Get Greeting</button>
+
+    <h2 id="greeting-text"></h2>
+
+    <!-- <script src="./homepage.js"></script> -->
+
+    <script>
+        // (async () => {
+        //     const response = await fetch("/greeting");
+        //     const greetingResponse = await response.json();
+        //     console.log(greetingResponse);
+        // })();
+
+        const button = document.getElementById("fetch-greeting-btn");
+        const greetingTextTag = document.getElementById("greeting-text");
+        // button.addEventListener("click", showGreeting);
+
+        const showGreeting = () => {
+            const inputName = document.getElementById("input-name").value;
+            fetch(`/greeting?name=${inputName}`)
+                .then(response => response.json())
+                .then(result => {
+                    greetingTextTag.textContent = result.data;
+                    console.log(result.data)
+                }
+                );
+        }
+
+
+    </script>
+
 </body>
+
 </html>

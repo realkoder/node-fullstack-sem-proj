@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Flyes By</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: antiquewhite;
+            padding: 20px;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .input-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>The Times!</h1>
+
+    <div>
+        <div class="input-container">
+            <label for="input-area">Enter area</label>
+            <input id="input-area" placeholder="Area (e.g., Europe or Africa)">
+        </div>
+
+        <div class="input-container">
+            <label for="input-location">Enter location</label>
+            <input id="input-location" placeholder="Location (e.g., Berlin or Copenhagen)">
+        </div>
+        <div class="button-container">
+            <button onclick="fetchTime()" type="button">What is the time?</button>
+        </div>
+    </div>
+
+    <h2 id="header-display-time"></h2>
+    <h2 id="display-time"></h2>
+
+    <script>
+
+        function fetchTime() {
+            const displayTimeTag = document.getElementById("display-time");
+            const displayTimerTagHeader = document.getElementById("header-display-time");
+            const providedArea = document.getElementById("input-area").value;
+            const providedLocation = document.getElementById("input-location").value;
+
+            if (providedArea === "" || providedLocation === "" || containsNonLetters(providedArea) || containsNonLetters(providedLocation)) {
+                displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS"
+                return;
+            }
+
+            fetch(`http://worldtimeapi.org/api/timezone/${providedArea}/${providedLocation}`)
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result)
+                    if (result.error) {
+                        displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS"
+                    } else {
+                        displayTimerTagHeader.textContent = `${providedArea} / ${providedLocation}`;
+                        displayTimeTag.textContent = formatDateTimeString(result.datetime);
+                    }
+                });
+        }
+
+        function formatDateTimeString(dateTime) {
+            const date = new Date(dateTime);
+            const formattedDate = date.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            const formattedTime = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            const timeZoneOffset = date.toString().match(/\((.*?)\)/)[1];
+            const formattedString = `${formattedDate}, ${formattedTime} (${timeZoneOffset})`;
+
+            return formattedString;
+        }
+
+        function containsNonLetters(str) {         
+            for (let i = 0; i < str.length; i++) {
+                const char = str[i];             
+                if (!(char >= 'a' && char <= 'z') && !(char >= 'A' && char <= 'Z')) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+    </script>
+
+</body>
+
+</html>
