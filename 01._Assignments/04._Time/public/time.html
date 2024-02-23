@@ -95,7 +95,8 @@
             const providedLocation = document.getElementById("input-location").value;
 
             if (providedArea === "" || providedLocation === "" || containsNonLetters(providedArea) || containsNonLetters(providedLocation)) {
-                displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS"
+                displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS";
+                displayTimerTagHeader.textContent = "";
                 return;
             }
 
@@ -104,7 +105,8 @@
                 .then(result => {
                     console.log(result)
                     if (result.error) {
-                        displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS"
+                        displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS";
+                        displayTimerTagHeader.textContent = "";
                     } else {
                         displayTimerTagHeader.textContent = `${providedArea} / ${providedLocation}`;
                         displayTimeTag.textContent = formatDateTimeString(result.datetime);
