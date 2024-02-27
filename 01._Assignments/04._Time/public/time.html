@@ -34,8 +34,8 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 16px;  
-            width: 30%;         
+            font-size: 16px;
+            width: 30%;
         }
 
         input:focus {
@@ -104,30 +104,30 @@
 
             fetch(`https://worldtimeapi.org/api/timezone/${providedArea}/${providedLocation}`)
                 .then(response => response.json())
-                .then(result => {
-                    console.log(result)
+                .then(result => {                    
                     if (result.error) {
                         displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS";
                         displayTimerTagHeader.textContent = "";
                     } else {
                         displayTimerTagHeader.textContent = `${providedArea} / ${providedLocation}`;
-                        displayTimeTag.textContent = formatDateTimeString(result.datetime);
+                        displayTimeTag.textContent = formatDateTimeString(result.day_of_week, result.datetime, result.timezone, result.utc_offset);
                     }
                 });
         }
 
-        function formatDateTimeString(dateTime) {
-            const date = new Date(dateTime);
-            const formattedDate = date.toLocaleDateString('da-DK', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-            const formattedTime = date.toLocaleTimeString('da-DK', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-            const timeZoneOffset = date.toString().match(/\((.*)\)/)[0];                        
-            const formattedString = `${formattedDate}, ${formattedTime} ${timeZoneOffset}`;                        
+        const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        function formatDateTimeString(dayOfWeek, dateTime, timezone, utcOffset) {
+            const dateTimeArray = dateTime.split("-");            
+            const dayOfMonth = dateTimeArray[2].split("T")[0];
+            const timeOfTheDay = dateTimeArray[2].split("T")[1].split(".")[0];
+            const formattedString = `${weekdays[dayOfWeek]} ${dayOfMonth}-${dateTimeArray[1]}-${dateTimeArray[0]}, local time: ${timeOfTheDay}, (${timezone} - UTC ${utcOffset})`;
             return formattedString;
         }
 
-        function containsNonLetters(str) {         
+        function containsNonLetters(str) {
             for (let i = 0; i < str.length; i++) {
-                const char = str[i];             
+                const char = str[i];
                 if (!(char >= 'a' && char <= 'z') && !(char >= 'A' && char <= 'Z')) {
                     return true;
                 }
