@@ -18,7 +18,7 @@
             text-align: center;
         }
 
-        .input-container {
+        .select-container {
             display: flex;
             flex-direction: column;
             margin-bottom: 20px;
@@ -30,7 +30,7 @@
             color: #333;
         }
 
-        input {
+        select {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -38,7 +38,7 @@
             width: 30%;
         }
 
-        input:focus {
+        select:focus {
             outline: none;
             border-color: #007bff;
         }
@@ -71,14 +71,18 @@
     <h1>The Times!</h1>
 
     <div>
-        <div class="input-container">
-            <label for="input-area">Enter area</label>
-            <input id="input-area" placeholder="Area (e.g., Europe or Africa)">
+        <div class="select-container">
+            <label for="dynamic-select-area">Select an area</label>
+            <select id="dynamic-select-area">
+                <option value="" selected disabled>Select an option...</option>
+            </select>
         </div>
 
-        <div class="input-container">
-            <label for="input-location">Enter location</label>
-            <input id="input-location" placeholder="Location (e.g., Berlin or Copenhagen)">
+        <div class="select-container">
+            <label for="dynamic-select-city">Select a city</label>
+            <select id="dynamic-select-city">
+                <option value="" selected disabled>Select an option...</option>
+            </select>
         </div>
         <div class="button-container">
             <button onclick="fetchTime()" type="button">What is the time?</button>
@@ -90,26 +94,75 @@
 
     <script>
 
+        const selectArea = document.getElementById("dynamic-select-area");
+        const selectCity = document.getElementById("dynamic-select-city");
+        let areaWithCities = {};
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch(`https://worldtimeapi.org/api/timezone`)
+                .then(response => response.json())
+                .then(result => {
+                    if (result.error) {
+                        // TODO: Handle error
+                    } else {
+                        result.forEach(areaCity => {
+                            if (areaCity.includes("Etc") || !areaCity.includes("/")) return;
+
+                            const [area, city] = areaCity.split("/");
+
+                            if (!areaWithCities[area]) {
+                                areaWithCities[area] = [city];
+                            } else {
+                                areaWithCities[area].push(city);
+                            }
+                        });
+                        console.log("LOKATME", areaWithCities);
+                    }
+
+                    Object.keys(areaWithCities).forEach(area => {                        
+                        var option = document.createElement("option");
+                        option.textContent = area;                        
+                        selectArea.appendChild(option);                    
+                    });
+                });
+        });
+
+        // Listener for area selector changes -> populates city seletor
+        selectArea.addEventListener("change", () => {
+            const selectedOption = selectArea.options[selectArea.selectedIndex];
+
+            const selectedText = selectedOption.textContent;
+            selectCity.innerHTML = "";         
+            areaWithCities[selectedText].forEach(city => {
+                var option = document.createElement("option");
+                option.textContent = city;
+                option.value = city;
+                selectCity.appendChild(option);                
+            });
+        });
+
         function fetchTime() {
             const displayTimeTag = document.getElementById("display-time");
             const displayTimerTagHeader = document.getElementById("header-display-time");
-            const providedArea = document.getElementById("input-area").value;
-            const providedLocation = document.getElementById("input-location").value;
+            // const providedArea = document.getElementById("input-area").value;
+            // const providedLocation = document.getElementById("input-location").value;
+            const providedArea = selectArea.options[selectArea.selectedIndex].textContent;
+            const providedCity = selectCity.options[selectCity.selectedIndex].textContent;            
 
-            if (providedArea === "" || providedLocation === "" || containsNonLetters(providedArea) || containsNonLetters(providedLocation)) {
+            if (providedArea === "" || providedCity === "" || containsNonLetters(providedArea) || containsNonLetters(providedCity)) {
                 displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS";
                 displayTimerTagHeader.textContent = "";
                 return;
             }
 
-            fetch(`https://worldtimeapi.org/api/timezone/${providedArea}/${providedLocation}`)
+            fetch(`https://worldtimeapi.org/api/timezone/${providedArea}/${providedCity}`)
                 .then(response => response.json())
-                .then(result => {                    
+                .then(result => {
                     if (result.error) {
                         displayTimeTag.textContent = "WHOOPSIE - SOMETHING ISN'T RIGHT! CHECK YOUR INPUTS";
                         displayTimerTagHeader.textContent = "";
                     } else {
-                        displayTimerTagHeader.textContent = `${providedArea} / ${providedLocation}`;
+                        displayTimerTagHeader.textContent = `${providedArea} / ${providedCity}`;
                         displayTimeTag.textContent = formatDateTimeString(result.day_of_week, result.datetime, result.timezone, result.utc_offset);
                     }
                 });
@@ -118,7 +171,7 @@
         const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
         function formatDateTimeString(dayOfWeek, dateTime, timezone, utcOffset) {
-            const dateTimeArray = dateTime.split("-");            
+            const dateTimeArray = dateTime.split("-");
             const dayOfMonth = dateTimeArray[2].split("T")[0];
             const timeOfTheDay = dateTimeArray[2].split("T")[1].split(".")[0];
             const formattedString = `${weekdays[dayOfWeek]} ${dayOfMonth}-${dateTimeArray[1]}-${dateTimeArray[0]}, local time: ${timeOfTheDay}, (${timezone} - UTC ${utcOffset})`;
