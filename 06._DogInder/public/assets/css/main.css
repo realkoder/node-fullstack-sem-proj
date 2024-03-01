@@ -1,0 +1,39 @@
+body {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.image-link {
+    display: inline-block;
+    margin: 2em;
+    text-decoration: none;            
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image-link img {
+    display: block;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;                    
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav > a {
+    margin: 1em;
+}

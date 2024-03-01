@@ -11,6 +11,15 @@ REPL - `Read Evaluate Print Loop`. A REPL is an interactive programming environm
 node
 ```
 
+## HTML rendering
+Html view is rendered procedural an example that can give some errors where the html tag is null - the js file will run before the html tag is created.
+```html
+<script src="/assets/js/footer.js"></script>
+<footer>
+    <p id="copyright-year"></p>
+ </footer>    
+```
+
 ## The use of var
 Don't use `var` it wont stick to its scope - it will polute outside its scope.
 ```javascript
