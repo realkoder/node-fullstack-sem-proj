@@ -1,0 +1,26 @@
+body {
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > a {
+    margin: 1em;
+}
+
+main {
+    flex: 1;
+    text-align: center;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
