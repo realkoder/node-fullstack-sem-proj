@@ -10,5 +10,3 @@ app.get("/", (req, res) => {
 
 const PORT = 8080;
 app.listen(PORT, (error) => console.log(error ? "An error occurred starting server" : "Server is running on port", PORT));
-
-console.log(new Date())

@@ -1,8 +1,12 @@
-const express = require("express");
+import express from "express";
 
 const app = express();
 
 app.use(express.json());
+
+app.use(express.static("public"));
+
+const { helicopterFactory } = import("./util/helicopterFactory.js");
 
 app.get("/", (req, res) => {
     console.log(__dirname);
@@ -13,7 +17,7 @@ app.get("/publicsquare", (req, res) => {
     res.sendFile(__dirname + "/public/publicsquare/publicsquare.html");
 });
 
-const knownNames = ["Alex"]
+const knownNames = ["Alex"];
 
 app.get("/greeting", (req, res) => {
     const queryName = req.query.name;
@@ -23,6 +27,13 @@ app.get("/greeting", (req, res) => {
 
 app.get("/knownpeople", (req, res) => {
     res.send({ data: knownNames.length });
+});
+
+
+app.get("/proxy", (req, res) => {
+    fetch("https://google.com")
+        .then(response => response.text())
+        .then(result => res.send(result));
 });
 
 
