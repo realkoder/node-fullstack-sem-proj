@@ -1,23 +1,31 @@
 import express from "express";
-import path from "path"
 import getMatches from "./util/matches.js";
 
 const app = express();
 
 app.use(express.static("public"));
 
+import { homepagePage, contactPage, matchesPage } from "./util/readPages.js";
+
 // =================== HTML ==================
 
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve("public/pages/homepage/homepage.html"));
+    //res.sendFile(path.resolve("public/pages/homepage/homepage.html"));
+    res.send(homepagePage);
 });
 
 app.get("/matches", (req, res) => {
-    res.sendFile(path.resolve("public/pages/matches/matches.html"));
+    // res.sendFile(path.resolve("public/pages/matches/matches.html"));
+    res.send(matchesPage);
 });
 
 app.get("/contact", (req, res) => {
-    res.sendFile(path.resolve("public/pages/contact/contact.html"));
+    // res.sendFile(path.resolve("public/pages/contact/contact.html"));
+    res.send(contactPage);
+});
+
+app.get("/page", (req, res) => {
+    res.send("");
 });
 
 // =================== API ==================
