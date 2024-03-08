@@ -22,7 +22,7 @@
     <div id="celebration-box">
         <h3>Yes it does</h3>
         <a href="/publicsquare">PUBLICSQUARE</a>
-    </div>    
+    </div>
 
     <input id="input-name" placeholder="Your name here" />
     <button onclick="showGreeting()">Get Greeting</button>
@@ -32,6 +32,10 @@
     <script src="./homepage/homepage.js"></script> -->
 
     <script>
+        setTimeout(() => {
+            window.location.href = "/publicsquare";
+        }, 3000);
+
         // (async () => {
         //     const response = await fetch("/greeting");
         //     const greetingResponse = await response.json();

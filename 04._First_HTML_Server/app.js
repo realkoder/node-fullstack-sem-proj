@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path"
 
 const app = express();
 
@@ -6,16 +7,30 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const { helicopterFactory } = import("./util/helicopterFactory.js");
+//const { helicopterFactory } = import("./util/helicopterFactory.js");
 
 app.get("/", (req, res) => {
-    console.log(__dirname);
-    res.sendFile(__dirname + "/public/homepage/homepage.html");
+    res.sendFile(path.resolve("public/homepage/homepage.html"));
 });
 
 app.get("/publicsquare", (req, res) => {
-    res.sendFile(__dirname + "/public/publicsquare/publicsquare.html");
+    res.sendFile(path.resolve("public/publicsquare/publicsquare.html"));
 });
+
+
+app.get("/treasuretrove", (req, res) => {
+    res.send({ data: "You found it" });
+});
+
+app.get("/secretpassphrase", (req, res) => {
+    const providedPassPhrase = req.query.passphrase
+    if (providedPassPhrase !== "SesameOpenUp") {
+        res.status(400).send({ data: "Wrong passphrase" });
+    }
+    else {
+        res.redirect("/treasuretrove")
+    }
+})
 
 const knownNames = ["Alex"];
 
