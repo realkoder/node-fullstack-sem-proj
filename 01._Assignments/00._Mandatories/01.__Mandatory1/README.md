@@ -47,16 +47,17 @@ unix time
 
 
 ### IMPORT EXPORT
-module -> import / export - export default
+module -> import / export - export default -> `ECMAScript Modules (ESM)`
 <br>
 commonjs -> require
 <br>
 
 
-### Libraries
+### Libraries / TOOLS
 Faker
 <br>
 Intl
 <br>
 express
 <br>
+app.use(express.json()); -> Built in Express framework. Content-Type Header Validation: express.json() middleware checks the Content-Type header of incoming requests to ensure they indicate JSON content. If the header does not match application/json, Express will not attempt to parse the request body as JSON, helping to prevent parsing errors and potential security vulnerabilities.
