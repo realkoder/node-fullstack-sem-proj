@@ -516,6 +516,9 @@ video {
   color: rgb(219 234 254 / var(--tw-text-opacity));
   text-decoration-line: underline;
 }
+.m-4 {
+  margin: 1rem;
+}
 .flex {
   display: flex;
 }
@@ -540,11 +543,21 @@ video {
 .justify-center {
   justify-content: center;
 }
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+.border-gray-400 {
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+.p-4 {
+  padding: 1rem;
+}
 .text-center {
   text-align: center;
 }
-.text-6xl {
-  font-size: 3.75rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 .text-purple-300 {
