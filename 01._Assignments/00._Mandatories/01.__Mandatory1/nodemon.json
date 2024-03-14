@@ -1,3 +1,10 @@
 {
-    "ext": "html, js, json, css"
+    "watch": [
+        "public/**/*.{js,html}",
+        "public/**/**/*.{js,css,html}",
+        "components/**/*.{js,html}",        
+        "utils/**/*.{js,html}"    
+    ],
+    "ext": "css, js, html",
+    "exec": "postcss public/assets/css/tailwind.css -o public/assets/css/styles.css && node app.js"
 }
