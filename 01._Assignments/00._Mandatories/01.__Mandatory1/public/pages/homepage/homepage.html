@@ -1,5 +1,51 @@
-<h1 class="text-5xl">Full Stack Node.js Documentation 📖</h1>
-<p class="text-purple-300">hjef</p>
+<h1 class="text-5xl m-12">Full Stack Node.js Documentation 📖</h1>
 
+
+<div class="flex">
+    <div id="content" class="flex-1 text-lg m-8"></div>
+    <div id="code" class="flex-1 m-8"></div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+<script>
+    function highlightCodeBlocks() {
+        const codeElements = document.querySelectorAll('pre code');
+        hljs.highlightAll();
+        codeElements.forEach(element => {
+            element.parentElement.classList.add('max-w-screen-lg', 'mx-auto');
+
+            const language = element.className.split(' ')[0];
+
+            const languageDiv = document.createElement('div');
+            languageDiv.textContent = language;
+            languageDiv.classList.add('text-sm', 'text-gray-500', 'mb-2');
+
+            element.parentNode.insertBefore(languageDiv, element);
+        });
+    };
+
+    (async () => {
+        const response = await fetch("/markdownContent/datatypes/objects");
+        if (!response.ok) {
+            console.error("Failed to fetch Markdown content");
+            return;
+        }
+        const data = await response.text();
+        const contentElement = document.getElementById('content');
+        const codeElement = document.getElementById('code');
+
+        contentElement.innerHTML = marked.parse(data);
+
+        const codeBlocks = contentElement.querySelectorAll('pre');
+        codeBlocks.forEach(block => {
+            codeElement.appendChild(block);
+        });
+
+        highlightCodeBlocks();
+    })();
+</script>
 
 </main>

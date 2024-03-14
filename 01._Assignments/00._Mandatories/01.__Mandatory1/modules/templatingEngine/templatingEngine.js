@@ -8,7 +8,7 @@ const footer = fs.readFileSync("./public/components/footer/footer.html").toStrin
 
 export function renderPage(page, config = {}) {
     const header = fs.readFileSync("./public/components/header/header.html").toString();
-    return header.replace("$TAB_TITLE$", config.tabTitle || "DogInder")
+    return header.replace("$TAB_TITLE$", config.tabTitle || "Documentation")
         .replace("$CSS_LINKS$", config.CSSLinks || "")
         + page
         + footer;
