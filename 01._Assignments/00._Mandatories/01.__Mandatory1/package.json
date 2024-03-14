@@ -1,15 +1,15 @@
 {
   "name": "nodejs-fullstack-documentation",
   "version": "1.0.0",
-  "main": "app.mjs",
+  "main": "app.js",
   "engines": {
     "node": ">=14.0.0"
   },
   "type": "module",
   "scripts": {
     "build:css": "postcss public/assets/css/tailwind.css -o public/assets/css/styles.css",
-    "dev": "concurrently \"nodemon app.mjs\" \"npm run build:css\"",
-    "start": "node app.mjs"
+    "dev": "concurrently \"nodemon app.js\" \"npm run build:css\"",
+    "start": "node app.js"
   },
   "dependencies": {
     "autoprefixer": "^10.4.18",

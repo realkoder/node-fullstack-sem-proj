@@ -7,6 +7,7 @@ const app = express();
 app.use(express.static("public"));
 
 import { homepagePage } from "./modules/templatingEngine/readPages.js";
+import { url } from "inspector";
 
 // ======================= HTML =======================
 
@@ -42,5 +43,6 @@ app.listen(PORT, (error) => {
         console.log("Server FAILED running on: ", PORT);
     } else {
         console.log("Server is running on port: ", PORT);
+        console.log("Go to: ", new URL(`http://localhost:${PORT}/`).href);
     }
 })
