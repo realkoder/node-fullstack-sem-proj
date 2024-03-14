@@ -7,5 +7,5 @@
         "utils/**/*.{js,html}"
     ],
     "ext": "css, js, html, json, md",
-    "exec": "postcss public/assets/css/tailwind.css -o public/assets/css/styles.css && node app.js"
+    "exec": "postcss public/assets/css/tailwind.css -o public/assets/css/styles.css && node app.mjs"
 }
