@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/globals.css">
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/default.min.css">
     $CSS_LINKS$
@@ -17,8 +18,25 @@
 
     <nav class="w-screen flex items-center justify-center m-4 border-b-2 border-gray-400 p-4">
         <a href="/" class="nav-link">Home</a>
-        <a href="/types" class="nav-link">Types</a>
-        <a href="/functions" class="nav-link">function</a>
+        <a href="/datatypes" class="nav-link">Datatypes</a>
+        <a href="/functions" class="nav-link">Function</a>
+        <a href="/modules" class="nav-link">Modules</a>
+        <a href="/librariesTools" class="nav-link">Libraries & Tools</a>
+        <a href="/date" class="nav-link">Date</a>
         <a href="/about" class="nav-link">About</a>
     </nav>
     <main class="w-screen flex-1 text-center">
+
+        <script>
+            var currentUrlEndpoint = "/"  + window.location.href.split("/")[3];
+
+            var navLinks = document.getElementsByClassName('nav-link');
+
+            for (var i = 0; i < navLinks.length; i++) {
+                if ((navLinks[i].getAttribute('href') === '/' && currentUrlEndpoint == "") || navLinks[i].getAttribute('href') === currentUrlEndpoint) {                    
+                    navLinks[i].classList.add('bg-green-500', 'text-white', 'hover:bg-green-500', 'hover:underline', 'hover:text-green-100');
+                    navLinks[i].classList.remove('bg-blue-500');
+
+                }
+            }
+        </script>

@@ -1,6 +1,6 @@
 # Objects
 
-Objects in JavaScript and Node.js are fundamental data structures that allow you to store collections of key-value pairs. 
+Objects in `JavaScript` and `Node.js` are fundamental data structures that allow you to store collections of key-value pairs. 
 They are versatile and can represent various entities, from simple data structures to complex entities with behaviors and methods.
 
 Here are some key concepts about objects in JavaScript and Node.js:

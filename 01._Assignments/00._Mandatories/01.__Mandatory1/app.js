@@ -16,6 +16,34 @@ app.get("/", (req, res) => {
     res.send(homepagePage);
 });
 
+app.get("/datatypes", (req, res) => {
+    res.send(homepagePage);
+});
+
+app.get("/functions", (req, res) => {
+    res.send(homepagePage);
+});
+
+app.get("/modules", (req, res) => {
+    res.send(homepagePage);
+});
+
+app.get("/librariesTools", (req, res) => {
+    res.send(homepagePage);
+});
+
+
+app.get("/date", (req, res) => {
+    res.send(homepagePage);
+});
+
+
+app.get("/about", (req, res) => {
+    res.send(homepagePage);
+});
+
+
+
 // ======================= API =======================
 
 app.get("/markdownContent/:directory/:filename", (req, res) => {
