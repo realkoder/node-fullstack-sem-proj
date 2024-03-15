@@ -92,5 +92,16 @@ console.log(Date());
 ```
 
 
+## Nullish coalesce operator
+
+```javascript
+// Nullish coalesce operator ?? ||
+const value = undefined;
+
+console.log(value ?? "some other value");
+console.log(value || "some other value"); // type coerces ... takes falsy values and coerce
+```
+
+
 ### Shortcuts
 WHen inside markdown file press `ctrl + shift + v ` then the file will be displayed with formatting. Pretty nice and convenient.
