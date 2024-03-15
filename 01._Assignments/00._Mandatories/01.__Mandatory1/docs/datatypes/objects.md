@@ -30,3 +30,10 @@ Adding and Modifying Properties: You can add new properties to an object or modi
 person.country = "USA"; // Add new property
 person.age = 31; // Modify existing property
 ```
+
+### Destructuring objects
+
+When an object is destructured some of the keys are taken and put into a new created object.
+
+### Spread operator
+`{...obj, company: "McDonalds"}` this takes all the key values from `obj` and also create a new key/value which is company.

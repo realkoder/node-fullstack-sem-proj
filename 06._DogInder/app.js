@@ -1,39 +1,52 @@
 import express from "express";
-import getMatches from "./util/matches.js";
 
 const app = express();
 
 app.use(express.static("public"));
 
-import { homepagePage, contactPage, matchesPage } from "./util/readPages.js";
+import playRouter from "./routers/playRouter.js";
 
-// =================== HTML ==================
+app.use(playRouter);
 
-app.get("/", (req, res) => {
-    //res.sendFile(path.resolve("public/pages/homepage/homepage.html"));
-    res.send(homepagePage);
-});
+// Task: Creates a matchesRouter and put /matches route inside of it and combine irt with the server
+import matchesRouter from "./routers/matchesRouter.js"
+app.use(matchesRouter);
 
-app.get("/matches", (req, res) => {
-    // res.sendFile(path.resolve("public/pages/matches/matches.html"));
-    res.send(matchesPage);
-});
+// Task: Create a pagesRouter add the html routes into it
 
-app.get("/contact", (req, res) => {
-    // res.sendFile(path.resolve("public/pages/contact/contact.html"));
-    res.send(contactPage);
-});
+import pagesRouter from "./routers/pagesRouter.js"
+app.use(pagesRouter);
 
-app.get("/page", (req, res) => {
-    res.send("");
-});
+
+// import { homepagePage, contactPage, matchesPage } from "./util/readPages.js";
+
+// // =================== HTML ==================
+
+// app.get("/", (req, res) => {
+//     //res.sendFile(path.resolve("public/pages/homepage/homepage.html"));
+//     res.send(homepagePage);
+// });
+
+// app.get("/matches", (req, res) => {
+//     // res.sendFile(path.resolve("public/pages/matches/matches.html"));
+//     res.send(matchesPage);
+// });
+
+// app.get("/contact", (req, res) => {
+//     // res.sendFile(path.resolve("public/pages/contact/contact.html"));
+//     res.send(contactPage);
+// });
+
+// app.get("/page", (req, res) => {
+//     res.send("");
+// });
 
 // =================== API ==================
 
-app.get("/api/matches", async (req, res) => {
-    const matches = await getMatches();
-    res.send({ data: matches });
-});
+// app.get("/api/matches", async (req, res) => {
+//     const matches = await getMatches();
+//     res.send({ data: matches });
+// });
 
 const PORT = 8080;
 
