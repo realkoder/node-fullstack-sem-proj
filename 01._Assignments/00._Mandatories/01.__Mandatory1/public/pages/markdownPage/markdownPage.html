@@ -1,0 +1,16 @@
+<h1 class="text-5xl m-12">$HEADER$</h1>
+
+
+<div class="flex">
+    <div id="content" class="flex-1 text-lg m-8"></div>
+    <div id="code" class="flex-1 m-4"></div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+<script src="/assets/js/insertMarkdownFile.js"></script>
+<script>
+    fetchAndDisplayMarkdownFile("$DIRECTORY_NAME$", "$FILE_NAME$");
+</script>
