@@ -16,11 +16,6 @@ router.get("/", (req, res) => {
     res.send(markdownHomepagePage);
 });
 
-
-router.get("/about", (req, res) => {
-    res.send(homepagePage);
-});
-
 router.get("/asynchronous", (req, res) => {
     res.send(markdownAsynchronousPagePage);
 });
