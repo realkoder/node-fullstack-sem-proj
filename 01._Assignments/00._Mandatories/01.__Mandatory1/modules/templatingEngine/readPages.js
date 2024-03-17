@@ -1,54 +1,57 @@
 import { renderPage, readPage } from "./templatingEngine.js";
 
-const markdownHomepage = readPage("./public/pages/markdownPage/markdownPage.html");
-export const markdownHomepagePage = renderPage(markdownHomepage, {
+const markdownPage = readPage("./public/pages/markdownPage/markdownPage.html");
+
+export const markdownHomepagePage = renderPage(markdownPage, {
     tabTitle: "Full Stack Node.js - Mandatory01",
     header: "Mandatory01", 
     directoryName: "homepage",
     fileName: "homepage"
 });
 
-const markdownAsynchronousPage = readPage("./public/pages/markdownPage/markdownPage.html");
-export const markdownAsynchronousPagePage = renderPage(markdownAsynchronousPage, {
+export const markdownAsynchronousPagePage = renderPage(markdownPage, {
     tabTitle: "Asynchronous",
     header: "Asynchronous", 
     directoryName: "asynchronous",
     fileName: "asynchronous"
 });
 
-const markdownDatatypesPage = readPage("./public/pages/markdownPage/markdownPage.html");
-export const markdownDatatypesPagePage = renderPage(markdownDatatypesPage, {
+export const markdownDatatypesPagePage = renderPage(markdownPage, {
     tabTitle: "Datatypes",
     header: "Datatypes", 
     directoryName: "datatypes",
     fileName: "datatypes"
 });
 
-const markdownDatePage = readPage("./public/pages/markdownPage/markdownPage.html");
-export const markdownDatePagePage = renderPage(markdownDatePage, {
+export const markdownDatePagePage = renderPage(markdownPage, {
     tabTitle: "Date",
     header: "Date", 
     directoryName: "date",
     fileName: "date"
 });
 
-const markdownFunctionsPage = readPage("./public/pages/markdownPage/markdownPage.html");
-export const markdownFunctionsPagePage = renderPage(markdownFunctionsPage, {
+export const markdownFunctionsPagePage = renderPage(markdownPage, {
     tabTitle: "Functions",
     header: "Functions", 
     directoryName: "functions",
     fileName: "functions"
 });
-const markdownLibrariesToolsPage = readPage("./public/pages/markdownPage/markdownPage.html");
-export const markdownLibrariesToolsPagePage = renderPage(markdownLibrariesToolsPage, {
+
+export const markdownLibrariesToolsPagePage = renderPage(markdownPage, {
     tabTitle: "Lib & Tools",
     header: "Libraries & Tools", 
     directoryName: "libraries_tools",
     fileName: "libraries_tools"
 });
 
-const markdownObjectsPage = readPage("./public/pages/markdownPage/markdownPage.html");
-export const markdownObjectsPagePage = renderPage(markdownObjectsPage, {
+export const markdownMiscellaneousToolsPagePage = renderPage(markdownPage, {
+    tabTitle: "Miscellaneous",
+    header: "Miscellaneous", 
+    directoryName: "miscellaneous",
+    fileName: "miscellaneous"
+});
+
+export const markdownObjectsPagePage = renderPage(markdownPage, {
     tabTitle: "Objects",
     header: "Objects", 
     directoryName: "objects",

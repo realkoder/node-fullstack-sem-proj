@@ -20,7 +20,7 @@ On the right side of the page, you'll find code examples illustrating the concep
 
 ## Happy Reading!
 
-We hope you find Mandatory01 helpful and informative as you explore the world of `Full Stack Node.js` development. Happy reading!
+I hope you find Mandatory01 helpful and informative as you explore the world of `Full Stack Node.js` development. Happy reading!
 
 #### Happy coding!
 

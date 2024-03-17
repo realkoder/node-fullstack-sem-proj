@@ -9,6 +9,7 @@ import {
     markdownFunctionsPagePage,
     markdownHomepagePage,
     markdownLibrariesToolsPagePage,
+    markdownMiscellaneousToolsPagePage,
     markdownObjectsPagePage
 } from "../modules/templatingEngine/readPages.js";
 
@@ -36,10 +37,9 @@ router.get("/librariesTools", (req, res) => {
     res.send(markdownLibrariesToolsPagePage);
 });
 
-router.get("/modules", (req, res) => {
-    res.send();
+router.get("/miscellaneous", (req, res) => {
+    res.send(markdownMiscellaneousToolsPagePage);
 });
-
 
 router.get("/objects", (req, res) => {
     res.send(markdownObjectsPagePage)
