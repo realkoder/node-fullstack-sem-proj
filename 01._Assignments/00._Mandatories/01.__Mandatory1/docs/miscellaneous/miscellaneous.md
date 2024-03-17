@@ -1,13 +1,19 @@
 # Miscellaneous
 
 ## What is node.js
-
-
-## REPL
+`Node` is making it possible to run javascript on local machines without a browser - which means javascript can be used for setting up backend.
+<br>
+Running node will launch nodes runtime environment - then javascript code can be executed.
+REPL - `Read Evaluate Print Loop`. A REPL is an interactive programming environment that allows users to enter and execute individual lines or blocks of code, providing immediate feedback. 
+```bash
+# Execute nodejs REPL
+node
+```
 
 
 ## Express
-Express is a web application framework for node.js
+Express is a web application framework for node.js making it easier to establish a robust and scalable application or API.
+
 
 ```javascript
 // Showcasing how to import express, instantiation and bootup the server listening for HTTPrequest
