@@ -3,7 +3,7 @@
 #### Examples for code running async:
 Browser event handlers, network calls, buffers / streams, working with files / directories, setTimeout / setInterval, databases
 
-Javascript has one thread - the main thread
+`JavaScript` has one thread - the main thread
 
 Solution 1. Callbacks
 Problem: Callback hell or Pyramid of Doom -> 

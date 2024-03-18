@@ -4,7 +4,7 @@ Welcome to Mandatory01! This website serves as a comprehensive resource for lear
 
 ## About This Website
 
-Mandatory01 will help me and the reader understand key concepts in `Full Stack Node.js` development through a combination of explanatory notes and practical code examples.
+Mandatory01 will help me and the reader understand key concepts in `Full Stack Node.js` elective developing in `JavaScript` through a combination of explanatory notes and practical code examples.
 
 ## How to Use
 
