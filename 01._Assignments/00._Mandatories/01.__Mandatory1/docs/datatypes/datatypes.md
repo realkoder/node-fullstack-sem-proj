@@ -62,6 +62,8 @@ The bigint data type was introduced in ECMAScript 2020 (ES11) and allows for the
 <br>
 
 ### Boolean
+The `boolean` primitive datatype for `JavaScript` is used to store logical values as either `true` or `false`, they are often
+Usecase of boolean values are usually for conditionally operations, including ternary operators `isOdd ? "Number is odd" : "Number is even"`, if...else statements and while loops etc.
 
 <br>
 
@@ -70,6 +72,7 @@ The bigint data type was introduced in ECMAScript 2020 (ES11) and allows for the
 <br>
 
 ### Undefined
+TEXT ABOUT UNDEFINED
 
 <br>
 
@@ -78,7 +81,7 @@ The bigint data type was introduced in ECMAScript 2020 (ES11) and allows for the
 <br>
 
 ### Null
-
+TEXT ABOUT NULL
 <br>
 
 ---
@@ -142,6 +145,28 @@ let bigIntFromInteger = BigInt(1234567890);
 
 ```javascript
 // BOOLEAN
+let isCoding = true;
+
+// Toogle a boolean
+isCoding = !isCoding;
+
+// Showcasing logical operations such as AND (&&), OR (||), and NOT (!)
+// These operations evaluate expressions and return boolean values based on the truthiness of the operands.
+let a = true;
+let b = false;
+
+console.log(a && b); // Output: false (AND)
+console.log(a || b); // Output: true (OR)
+console.log(!a);     // Output: false (NOT)
+
+// Thruthy and falsy values
+console.log(Boolean(0));        // Output: false
+console.log(Boolean(''));       // Output: false
+console.log(Boolean(null));     // Output: false
+console.log(Boolean(undefined));// Output: false
+console.log(Boolean(NaN));      // Output: false
+console.log(Boolean(1));        // Output: true
+console.log(Boolean('hello'));  // Output: true
 
 ```
 

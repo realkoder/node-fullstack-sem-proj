@@ -1,4 +1,4 @@
-# Miscellaneous
+# Miscellaneous - General and Mixed Stuff From Elective
 
 ## What is node.js
 `Node` is making it possible to run `JavaScript` on local machines without a browser - which means `JavaScript` can be used for setting up backend.
@@ -15,6 +15,10 @@ node
 Express is a web application framework for node.js making it easier to establish a robust and scalable application or API.
 
 
+## Modules
+Ecmascript
+Commonjs
+
 ```javascript
 // Showcasing how to import express, instantiation and bootup the server listening for HTTPrequest
 const express = require('express');
@@ -30,7 +34,3 @@ app.listen(3000, () => {
   console.log('Server is listening on port 3000');
 });
 ```
-
-## Modules
-Ecmascript
-Commonjs
