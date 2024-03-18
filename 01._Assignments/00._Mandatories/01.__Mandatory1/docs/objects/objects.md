@@ -28,10 +28,23 @@ It makes it easier to work with dates in various formats, including `UTC` (Coord
 
 ### Array
 An array is also a `built-in object` for `JavaScript`, arrays is used as an container to store multiple values in a single variable. This allows for more convenient organization and manipulation of data. In `JavaScript` arrays are dynamic, meaning they can grow or shrink in size as needed, and they can hold values of any data type, including numbers, strings, objects, and even other arrays.
-Arrays do have the following methods: `push(), pop(), shift(), unshift(), slice(), splice(), forEach(), map(), filter(), reduce()`.
+Arrays do have the following methods: 
+- `push()`
+- `pop()` 
+- `shift()` 
+- `unshift()` 
+- `slice()` 
+- `splice()` 
+- `forEach()` 
+- `map()` 
+- `filter()` 
+- `reduce()`
+
+<br>
+
 These methods makes it more effecient to add, remove, insert and iterate over the elements in the given array.
 When working with arrays and the need for iterating the elements it's important to be cautious so `side-effects` will be avoided.
-Some array methods, such as `forEach(), map(), and filter()`, takes a callback function as an argument and execute that function for each element in the array. Be cautious when using these methods with functions that have side effects (i.e., functions that modify variables outside their scope), as it can lead to unexpected behavior and bugs. Always use the map() function for operations if the array will be modified so the original array won't be modified and avoid side effects when possible.
+Some array methods, such as `forEach(), map(), and filter()`, takes a callback function as an argument and execute that function for each element in the array. Be cautious when using these methods with functions that have side effects (i.e., functions that modify variables outside their scope), as it can lead to unexpected behavior and bugs. Always use the map() function if the array have to be modified so the original array remains unchanged, which avoids side effects.
 
 
 ```javascript
@@ -80,4 +93,11 @@ const localeCurrentDate = Date() // Local time (in my case CEST GMT+0100)
 const numbers = [1, 2, 3, 4, 5]; // Array literal
 const fruits = new Array('apple', 'banana', 'orange'); // Array constructor
 
+// Using the foreach() the foreach() is fine if we just iterate and doesnt modify the data
+numbers.forEach((number, index) => {
+    console.log(`Element at index ${index} is ${number}`);
+});
+
+// Example of map() where data is modified
+const doubledNumbers = numbers.map(number => number * 2);
 ```
