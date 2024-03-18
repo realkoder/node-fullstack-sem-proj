@@ -37,7 +37,8 @@ p {
 }
 
 
-#content > ul, ol {
+#content>ul,
+ol {
     list-style-type: disc;
     margin-left: 20px;
 }
@@ -59,6 +60,7 @@ img {
 
 
 pre>code {
+    text-align: left;
     font-style: normal;
     font-weight: normal;
 }
