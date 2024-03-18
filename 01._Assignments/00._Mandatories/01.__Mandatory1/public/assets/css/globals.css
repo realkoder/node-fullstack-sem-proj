@@ -30,9 +30,10 @@ p {
     margin-bottom: 1rem;
 }
 
-ul,
-ol {
-    margin-bottom: 1rem;
+
+#content > ul, ol {
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
 a {
@@ -51,15 +52,15 @@ img {
 }
 
 
-pre > code {
+pre>code {
     font-style: normal;
     font-weight: normal;
-  }
-  
-  code {
+}
+
+code {
     font-style: italic;
     font-weight: bold;
-  }
+}
 
 blockquote {
     border-left: 4px solid #007bff;
