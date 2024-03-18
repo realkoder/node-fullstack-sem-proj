@@ -104,6 +104,10 @@ Instantiating `symbol` quarantees a unique and immutable value that is used as a
 <br>
 
 ### Object
+Objects in `JavaScript` is used to store various keyed collections or values in key-value pairs. It is used to represent and manipulate data in structured manner. The most common way to instantiate an object in `JavaScript` is by `object literals = {}` here will each key-value pair be seperated by `:`.
+Properties for an object is accessible by dot notation `person.firstname` or bracket notation `person[firstname]`.
+In `JavaScript` objects are dynamic, which mean properties can be added, deleted or modified at runtime.
+Properties for a given object can be iterated over using: `Object.keys()`, `Object.values()`, and `Object.entries()`.
 
 
 ```javascript
@@ -175,7 +179,7 @@ console.log(Boolean(null));     // Output: false
 console.log(Boolean(undefined));// Output: false
 console.log(Boolean(NaN));      // Output: false
 console.log(Boolean(1));        // Output: true
-console.log(Boolean('hello'));  // Output: true
+console.log(Boolean('foo'));  // Output: true
 
 ```
 
@@ -210,10 +214,10 @@ function returnNull() {
 console.log(returnNull()); // Outputs null
 
 // Nullish Coalescing Operator (??):
-let x = t ?? "hej";
+let x = t ?? "foo";
 
 // Logical OR Operator (||):
-let x = t || "hej"; // considers falsy values (0, "", false, NaN, etc.) as falsy, and returns the right-hand operand when encountering any of them.
+let x = t || "foo"; // considers falsy values (0, "", false, NaN, etc.) as falsy, and returns the right-hand operand when encountering any of them.
 ```
 
 ```javascript
@@ -227,5 +231,24 @@ console.log(symbol1 === symbol2); // Output: false
 
 ```javascript
 // ========================== OBJECT ==========================
+// Creating an object
+const person = {
+    firstname: 'Anders',
+    lastname: 'Hejlsberg',
+    age: 30,    
+    greet: function() {
+        console.log(`Hello, I'm  + ${this.firstname} ${this.lastname}`);
+    }
+};
 
+console.log(person.firstname); // Output: "Anders"
+person.greet(); // Output: "Hello, I'm Anders Hejlsberg"
+
+// Iterating over keys from object person
+Object.keys(person).forEach(key => {
+    console.log(key + ': ' + person[key]);
+});
+
+// Removing a property from object Person
+delete Employee.firstname;
 ```
