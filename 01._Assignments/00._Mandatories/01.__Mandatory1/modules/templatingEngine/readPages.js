@@ -23,13 +23,6 @@ export const markdownDatatypesPagePage = renderPage(markdownPage, {
     fileName: "datatypes"
 });
 
-export const markdownDatePagePage = renderPage(markdownPage, {
-    tabTitle: "Date",
-    header: "Date", 
-    directoryName: "date",
-    fileName: "date"
-});
-
 export const markdownFunctionsPagePage = renderPage(markdownPage, {
     tabTitle: "Functions",
     header: "Functions", 

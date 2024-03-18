@@ -21,6 +21,23 @@
 
 <br>
 
+
+### Variable declaration
+`var`, `let`, and `const` are used to declare variables in `JavaScript`, they are fundamental for storing and accessing data in `JavaScript`.
+The different way of instantiating variables have different scoping rules, which affect how variables are accessed within different parts of the code. 
+This is important to understand when working with data in JavaScript, as it can impact the visibility and accessibility of variables - read more about scope at `Functions` page.
+Let and const introduce concepts of mutability and immutability, which are important considerations when working with data. Let is mutable and const is immutable.
+
+Be carefull about using `var` it wont stick to its scope - it will polute outside its scope. `(see code examples to the right)`.
+
+
+<br>
+
+---
+
+<br>
+
+
 ### String
 In `JavaScript`, a string is a sequence of characters enclosed within single quotes ' ' or double quotes " " or backtic \` \`.
 Strings are one of the primitive data types in `JavaScript`, and they represent textual data.
@@ -109,12 +126,58 @@ Properties for an object is accessible by dot notation `person.firstname` or bra
 In `JavaScript` objects are dynamic, which mean properties can be added, deleted or modified at runtime.
 Properties for a given object can be iterated over using: `Object.keys()`, `Object.values()`, and `Object.entries()`.
 
-
 ```javascript
 // DYNAMICALLY TYPED LANGUAGE EXAMPLE
 let foo = 42; // foo is now a number
 foo = "bar"; // foo is now a string
 foo = true; // foo is now a boolean
+```
+
+```javascript
+// Mutable variable with let
+let favoriteFood = "pizza";
+
+// Changed my mind - reassign favoriteFood variable
+favoriteFood = "sushi"
+
+console.log(faoriteFood); // Output sushi
+```
+```javascript
+// Immutable variable with const
+const dayOfBirthStr = "13-01-1996";
+
+// Attempt to reassign the constant
+// This will result in a TypeError
+// dayOfBirthStr = "01-01-2000";
+
+console.log(dayOfBirthStr); // Output "13-01-1996"
+```
+
+```javascript
+// Showcasing how var wont stick to it's scope
+{
+    var someValue = true;
+    {
+        var someValue = false;
+    }
+    console.log(somevalue); // Outputs false because var polutes the scope
+}
+```
+
+```javascript
+// Showcasing how var wont stick to it's scope
+for (var i = 0; i <= 5; i++) {
+    setTimeout(() => {
+        console.log(i);
+    })
+}
+// Output will be:
+// 6
+// 6
+// 6
+// 6
+// 6
+// 6
 ```
 
 ```javascript

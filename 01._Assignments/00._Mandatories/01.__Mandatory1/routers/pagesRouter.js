@@ -5,7 +5,6 @@ const router = Router();
 import {
     markdownAsynchronousPagePage,    
     markdownDatatypesPagePage,
-    markdownDatePagePage,
     markdownFunctionsPagePage,
     markdownHomepagePage,
     markdownLibrariesToolsPagePage,
@@ -23,10 +22,6 @@ router.get("/asynchronous", (req, res) => {
 
 router.get("/datatypes", (req, res) => {
     res.send(markdownDatatypesPagePage);
-});
-
-router.get("/date", (req, res) => {
-    res.send(markdownDatePagePage);
 });
 
 router.get("/functions", (req, res) => {
