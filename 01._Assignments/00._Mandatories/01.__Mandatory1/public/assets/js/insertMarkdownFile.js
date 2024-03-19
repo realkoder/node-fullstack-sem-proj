@@ -2,8 +2,6 @@ function highlightCodeBlocks() {
     const codeElements = document.querySelectorAll('pre code');
     hljs.highlightAll();
     codeElements.forEach(element => {
-        element.parentElement.classList.add('max-w-screen-lg', 'mx-auto');
-
         const language = element.className.split(' ')[0];
 
         const languageDiv = document.createElement('div');

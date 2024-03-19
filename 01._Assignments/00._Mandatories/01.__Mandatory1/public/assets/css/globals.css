@@ -9,25 +9,21 @@ html {
 
 h1 {
     text-align: center;
-    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: 1.25rem;
     font-weight: bold;
     margin-bottom: 0.75rem;
 }
 
 h4 {
-    font-size: 1rem;
     font-weight: bold;
     margin-bottom: 0.75rem;
 }
@@ -64,13 +60,15 @@ pre>code {
     font-style: normal;
     font-weight: normal;
     margin: 2rem;
+    overflow-x: auto;
 }
 
 code {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 3px;
-    padding: 2px 4px;    
+    padding: 2px 4px;
+    
 }
 
 blockquote {
