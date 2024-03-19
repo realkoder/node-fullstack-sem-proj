@@ -10,7 +10,7 @@ git clone https://github.com/realkoder/node-fullstack-sem-proj.git
 
 ```bash
 # Place yourself in projects root folder
-cd cd node-fullstack-sem-proj/01._Assignments/00._Mandatories/01.__Mandatory1/
+cd node-fullstack-sem-proj/01._Assignments/00._Mandatories/01.__Mandatory1/
 ```
 
 ```bash
