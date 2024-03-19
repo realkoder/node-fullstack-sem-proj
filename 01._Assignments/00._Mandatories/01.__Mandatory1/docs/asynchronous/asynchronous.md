@@ -1,7 +1,9 @@
 # Asynchronous Coding
 Aynchronous code is code that doesn't execute in the order it appears in the source code.
 Examples for code running asynchronous: `Browser event handlers, network calls, buffers / streams, working with files / directories, setTimeout / setInterval, databases`.
+
 `JavaScript` has one thread - the main thread. Even though it's single-threaded it's event-driven and do support asynchronous programming, where code is executing, it can also listen for and respond to events such as user interactions (clicks, mouse movements), timer events, or asynchronous operations like network requests. Asynchronous operations allow JavaScript to perform tasks in the background without blocking the main thread.
+
 The `event loop` is an important concept for `JavaScript` which allows to handle asynchronous operations efficiently. 
 The event loop continuously checks the call stack and the event queue. When the call stack is empty, the event loop checks if there are any pending events in the event queue. If there are, it dequeues them and pushes their corresponding callback functions onto the call stack for execution. This mechanism ensures that asynchronous tasks are processed in the order they were received, while still allowing the main thread to remain responsive.
 
