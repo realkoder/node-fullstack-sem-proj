@@ -18,6 +18,19 @@ REPL - `Read Evaluate Print Loop`. A REPL is an interactive programming environm
 
 <br>
 
+## What is ECMAScript (ES)
+`ECMAScript (ES)` is a standardized scripting language specification developed by Ecma International. They serve the foundation for several programming languages where `JavaScript` is the most notable implementation. `ECMAScript` specifications define the syntax, semantics, and core features of the language.
+`ECMAScript` was initially created to standardize `JavaScript` across different implementations and ensure compatibility among web browsers. The first edition of the `ECMAScript` standard was published in 1997, based on the features of Netscape's `JavaScript` and Microsoft's JScript. Since then, multiple editions of the `ECMAScript` specification have been released, each introducing new features, improvements, and clarifications.
+
+`ECMAScript` have a vital impact of the way web applications are developed, providing a standardized foundation for building interactive and dynamic websites and web applications. It continues to evolve over time, with new features and enhancements aimed at improving developer productivity, performance, and the overall developer experience.
+
+<br>
+
+---
+
+<br>
+
+
 ## Modules
 `JavaScript`relies heavily on the use of modules which provides a way to organize and structure code into reusable components, it tries to improve better code maintainability and reusability.
 The use of modules encapsulates related functionality into units, so different aspects of code will be isolated and code organization is improved.
