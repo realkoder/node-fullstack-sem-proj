@@ -126,6 +126,12 @@ Properties for an object is accessible by dot notation `person.firstname` or bra
 In `JavaScript` objects are dynamic, which mean properties can be added, deleted or modified at runtime.
 Properties for a given object can be iterated over using: `Object.keys()`, `Object.values()`, and `Object.entries()`.
 
+<br>
+
+---
+
+<br>
+
 ```javascript
 // DYNAMICALLY TYPED LANGUAGE EXAMPLE
 let foo = 42; // foo is now a number

@@ -1,8 +1,6 @@
-# Asynchronous code
+# Asynchronous Coding
 
-#### Examples for code running async:
-Browser event handlers, network calls, buffers / streams, working with files / directories, setTimeout / setInterval, databases
-
+Examples for code running asynchronous: `Browser event handlers, network calls, buffers / streams, working with files / directories, setTimeout / setInterval, databases`.
 `JavaScript` has one thread - the main thread
 
 Solution 1. Callbacks
@@ -19,3 +17,36 @@ states:
 
 Solution 3. Async/Await
 Syntactic sugar
+
+<br>
+
+---
+
+<br>
+
+## Promise
+
+<br>
+
+---
+
+<br>
+
+## Async / Await
+
+
+<br>
+
+---
+
+<br>
+
+```javascript
+// ========================== PROMISE ==========================
+
+```
+
+```javascript
+// ========================== ASYNC / AWAIT ==========================
+
+```

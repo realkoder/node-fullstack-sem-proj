@@ -47,8 +47,6 @@ Importing functionality with `CommonJS` would be to use the `require()`, which t
 
 <br>
 
-## Templating engine
-
 
 
 ```bash
