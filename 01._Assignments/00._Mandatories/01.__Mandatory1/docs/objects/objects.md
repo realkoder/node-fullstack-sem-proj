@@ -46,6 +46,11 @@ These methods makes it more effecient to add, remove, insert and iterate over th
 When working with arrays and the need for iterating the elements it's important to be cautious so `side-effects` will be avoided.
 Some array methods, such as `forEach(), map(), and filter()`, takes a callback function as an argument and execute that function for each element in the array. Be cautious when using these methods with functions that have side effects (i.e., functions that modify variables outside their scope), as it can lead to unexpected behavior and bugs. Always use the map() function if the array have to be modified so the original array remains unchanged, which avoids side effects.
 
+<br>
+
+---
+
+<br>
 
 ```javascript
 // Create an object in js

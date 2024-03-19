@@ -43,6 +43,13 @@ Installing `Faker` is easy through the use of `npm` where it's just running cli 
 Nodemon is a developer tool which makes it more convenient for developers to write their code and test it. Nodemon monitors changes in `Node.js` application files and restarts the server when changes have been detected. It eliminates the need to manually stop and restart the server every time you make changes to your code.
 Nodemon provides various options and configurations that allow you to customize its behavior according to your project's requirements. You can specify which files to monitor, ignore certain files or directories, and define additional settings such as delay before restarting, verbose logging, and more - all that have to be defined in `nodemon.json` file.
 
+<br>
+
+---
+
+<br>
+
+
 ```bash
 # ========================== NPM ==========================
 # Create an npm project
