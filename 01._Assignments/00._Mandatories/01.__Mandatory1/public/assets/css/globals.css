@@ -67,8 +67,10 @@ pre>code {
 }
 
 code {
-    font-style: italic;
-    font-weight: bold;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 2px 4px;    
 }
 
 blockquote {

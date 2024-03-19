@@ -280,7 +280,8 @@ console.log(returnNull()); // Outputs null
 let x = t ?? "foo";
 
 // Logical OR Operator (||):
-let x = t || "foo"; // considers falsy values (0, "", false, NaN, etc.) as falsy, and returns the right-hand operand when encountering any of them.
+let x = t || "foo"; // considers falsy values (0, "", false, NaN, etc.) as falsy,
+                    // and returns the right-hand operand when encountering any of them.
 ```
 
 ```javascript
@@ -298,7 +299,7 @@ console.log(symbol1 === symbol2); // Output: false
 const person = {
     firstname: 'Anders',
     lastname: 'Hejlsberg',
-    age: 30,    
+    age: 63,    
     greet: function() {
         console.log(`Hello, I'm  + ${this.firstname} ${this.lastname}`);
     }
@@ -313,5 +314,5 @@ Object.keys(person).forEach(key => {
 });
 
 // Removing a property from object Person
-delete Employee.firstname;
+delete person.firstname;
 ```

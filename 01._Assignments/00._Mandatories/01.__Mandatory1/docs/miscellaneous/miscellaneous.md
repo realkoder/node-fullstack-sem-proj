@@ -25,6 +25,8 @@ There are two different approaches to work with modules in `JavaScript` when a m
 - `ECMAScript modules (ES modules or ES6 modules)`
 - `CommonJS`
 
+For a `Node.js` project by default, it utilizes `CommonJS modules`. However, you can opt to use `ECMAScript (ES) modules` instead by adding the `.mjs (module JavaScript)` extension for `.js` files. Alternatively, in your `package.json` file, you can specify the module type as `"type: "module"`.
+
 ### ES Modules
 It was introduced as part of the `ECMAScript 2015 (ES6)` specification to provide a native module system for `JavaScript`.
 A module is file-based and can export variables, functions, classes and also other modules.
