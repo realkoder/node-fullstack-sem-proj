@@ -1,7 +1,15 @@
 {
     "version": 2,
-    "routes": [
-      { "handle": "filesystem" },
-      { "src": "/(.*)", "dest": "/" }
+    "builds": [
+      {
+        "src": "app.js",
+        "use": "@vercel/node",
+        "config": {
+          "buildCommand": "npm run build",
+          "outputDirectory": "public",
+          "devCommand": "npm run dev",
+          "startCommand": "npm run start"
+        }
+      }
     ]
   }
