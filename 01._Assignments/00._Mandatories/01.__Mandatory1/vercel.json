@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "app.js",
-        "use": "@vercel/node",
-        "config": {
-          "buildCommand": "npm run build",
-          "outputDirectory": "public",
-          "devCommand": "npm run dev",
-          "startCommand": "npm run start"
-        }
+        "src": "./index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
       }
     ]
-  }
+  } 

@@ -1,9 +1,9 @@
 {
   "name": "nodejs-fullstack-documentation",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "index.js",
   "engines": {
-    "node": ">=14.0.0"
+    "node": "18.x"
   },
   "type": "module",
   "scripts": {
