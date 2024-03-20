@@ -23,3 +23,5 @@
             console.log("Go to: ", new URL(`http://localhost:${PORT}/`).href);
         }
     });
+
+    export default app;
