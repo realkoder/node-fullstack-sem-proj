@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "build:css": "postcss public/assets/css/tailwind.css -o public/assets/css/styles.css",
-    "build": "node -e \"console.log('__dirname:', __dirname)\" && npm run build:css",
+    "build": "node -e \"console.log('__dirname:', __dirname)\" && ls -al && npm run build:css",
     "dev": "concurrently \"nodemon app.js\" \"npm run build:css\"",
     "start": "node app.js"
   },
