@@ -165,13 +165,14 @@ TO fix the problem where env var is instantiated differently for mac and windows
 <br>
 
 ### LINKS
-Fix issue with setting env var in script for mac / windows `cross-env` -> https://www.npmjs.com/package/cross-env
-<br>
-`Sending mails with NODEMAILER` -> https://www.nodemailer.com
-<br>
-`Production process manager PM2` -> https://www.npmjs.com/package/pm2
+`Fix issue with setting env var in script for mac / windows cross-env` -> https://www.npmjs.com/package/cross-env
 
-<br>
+
+`Sending mails with NODEMAILER` -> https://www.nodemailer.com
+
+
+`Production process manager PM2 - if application crash it will reinstatiate with PM2` -> https://www.npmjs.com/package/pm2
+
 
 ---
 
