@@ -1,6 +1,11 @@
 # node-fullstack-sem-proj
 Node fullstack semester project containing notes, thoughts and mandatory hand-ins.
 
+<br>
+
+---
+
+<br>
 
 ## What is node?
 Node is making it possible to run javascript on local machines without a browser - which means javascript can be used for setting up backend.
@@ -11,6 +16,12 @@ REPL - `Read Evaluate Print Loop`. A REPL is an interactive programming environm
 node
 ```
 
+<br>
+
+---
+
+<br>
+
 ## HTML rendering
 Html view is rendered procedural an example that can give some errors where the html tag is null - the js file will run before the html tag is created.
 ```html
@@ -20,11 +31,16 @@ Html view is rendered procedural an example that can give some errors where the 
  </footer>    
 ```
 
+<br>
+
+---
+
+<br>
+
 ## The use of var
 Don't use `var` it wont stick to its scope - it will polute outside its scope.
 ```javascript
 {
-    var someValue = true;
     {
         var someValue = false;
     }
@@ -40,8 +56,10 @@ for (var i = 0; i <= 5; i++) {
     })
 }
 ```
+
 ```bash
 6
+        var someValue = true;
 6
 6
 6
@@ -50,6 +68,11 @@ for (var i = 0; i <= 5; i++) {
 ```
 The print is because `var` polutes the scope that's why it prints 6 - if let is used the scope for i will stick for the console log inside the arrowhead function.
 
+<br>
+
+---
+
+<br>
 
 ## Bonus notes
 `Const` is constant NOT in the value but in the assignment, meaning that is cannot be reassigned and thus also HAS to be assigned.
@@ -59,7 +82,9 @@ The print is because `var` polutes the scope that's why it prints 6 - if let is 
 * Functions can be passed as arguments to other functions.
 * Functions can be returned from other functions.
 * Functions can be stored in arrays, objects, or other data structures.
+
 <br>
+
 Javascript is hoisted (`hoisting`) - JIT (just in time compilation) reads all declarations and then execute statements.
 Because of that the below code will work:
 ```javascript
@@ -76,6 +101,11 @@ Get PID for port 8080
 ```bash
 lsof -i :8080
 ```
+
+<br>
+
+---
+
 <br>
 
 ## Date With Javascript
@@ -91,6 +121,11 @@ console.log(Date.now());
 console.log(Date());
 ```
 
+<br>
+
+---
+
+<br>
 
 ## Nullish coalesce operator
 
@@ -102,6 +137,11 @@ console.log(value ?? "some other value");
 console.log(value || "some other value"); // type coerces ... takes falsy values and coerce
 ```
 
+<br>
+
+---
+
+<br>
 
 ## Environment Variables for Nodejs
 The `process` is only available within in `Nodejs` it's not a `JavaScript`thing.
@@ -118,10 +158,33 @@ process.env.PORT
 
 TO fix the problem where env var is instantiated differently for mac and windows - use cross-env to fix this issue https://www.npmjs.com/package/cross-env
 
+<br>
+
+---
+
+<br>
+
+### LINKS
+Fix issue with setting env var in script for mac / windows `cross-env` -> https://www.npmjs.com/package/cross-env
+<br>
+`Sending mails with NODEMAILER` -> https://www.nodemailer.com
+<br>
+`Production process manager PM2` -> https://www.npmjs.com/package/pm2
+
+<br>
+
+---
+
+<br>
 
 ### Shortcuts
 WHen inside markdown file press `ctrl + shift + v ` then the file will be displayed with formatting. Pretty nice and convenient.
 
+<br>
+
+---
+
+<br>
 
 
 ## MISCH / IMAGES
