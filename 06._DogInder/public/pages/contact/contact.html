@@ -1,1 +1,18 @@
-        <h1>I am contact</h1>
+<h1>I am contact</h1>
+
+<!-- task: Create a dummy contact form -->
+
+<div id="contact-input">
+        <form action="/api/contact" method="POST">
+                <label for="fullName">Enter your first name and lastname</label><br>
+                <input type="text" id="fullName" name="fullName" required placeholder="Your Firstname and Lastname"><br>
+
+                <label for="email">Enter your email</label><br>
+                <input type="text" id="email" name="email" required placeholder="Your Email Address"><br>
+
+                <label for="message">Enter your contact message here</label><br>
+                <textarea id="message" name="message" rows="20" cols="60"></textarea>
+
+                <button type="submit">Send message</button>
+        </form>
+</div>

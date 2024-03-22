@@ -2,6 +2,8 @@ import express from "express";
 
 const app = express();
 
+app.use(express.urlencoded({ extended: true }))
+
 app.use(express.static("public"));
 
 import playRouter from "./routers/playRouter.js";
@@ -16,39 +18,10 @@ app.use(matchesRouter);
 import pagesRouter from "./routers/pagesRouter.js"
 app.use(pagesRouter);
 
-
-// import { homepagePage, contactPage, matchesPage } from "./util/readPages.js";
-
-// // =================== HTML ==================
-
-// app.get("/", (req, res) => {
-//     //res.sendFile(path.resolve("public/pages/homepage/homepage.html"));
-//     res.send(homepagePage);
-// });
-
-// app.get("/matches", (req, res) => {
-//     // res.sendFile(path.resolve("public/pages/matches/matches.html"));
-//     res.send(matchesPage);
-// });
-
-// app.get("/contact", (req, res) => {
-//     // res.sendFile(path.resolve("public/pages/contact/contact.html"));
-//     res.send(contactPage);
-// });
-
-// app.get("/page", (req, res) => {
-//     res.send("");
-// });
-
-// =================== API ==================
-
-// app.get("/api/matches", async (req, res) => {
-//     const matches = await getMatches();
-//     res.send({ data: matches });
-// });
+import contactRouter from "./routers/contactRouter.js";
+app.use(contactRouter)
 
 
 const PORT = process.env.PORT || 8080;
-//const PORT = 8080;
 
 app.listen(PORT, () => console.log("Server is running on port: ", PORT));
