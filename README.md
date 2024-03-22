@@ -103,5 +103,21 @@ console.log(value || "some other value"); // type coerces ... takes falsy values
 ```
 
 
+## Environment Variables for Nodejs
+The `process` is only available within in `Nodejs` it's not a `JavaScript`thing.
+It's important that the environment var is parsed before nodemon app.js is executed otherwise the environment var isn't valid.
+```bash
+# Execute app with nodemon and set the env PORT
+PORT=9090 nodemon app.js
+```
+
+```javascript
+// Get env var called PORT
+process.env.PORT
+```
+
+TO fix the problem where env var is instantiated differently for mac and windows - use cross-env to fix this issue https://www.npmjs.com/package/cross-env
+
+
 ### Shortcuts
 WHen inside markdown file press `ctrl + shift + v ` then the file will be displayed with formatting. Pretty nice and convenient.

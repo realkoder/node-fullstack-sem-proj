@@ -13,7 +13,6 @@ import matchesRouter from "./routers/matchesRouter.js"
 app.use(matchesRouter);
 
 // Task: Create a pagesRouter add the html routes into it
-
 import pagesRouter from "./routers/pagesRouter.js"
 app.use(pagesRouter);
 
@@ -48,6 +47,8 @@ app.use(pagesRouter);
 //     res.send({ data: matches });
 // });
 
-const PORT = 8080;
+
+const PORT = process.env.PORT || 8080;
+//const PORT = 8080;
 
 app.listen(PORT, () => console.log("Server is running on port: ", PORT));
