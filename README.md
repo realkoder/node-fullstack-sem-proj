@@ -121,3 +121,9 @@ TO fix the problem where env var is instantiated differently for mac and windows
 
 ### Shortcuts
 WHen inside markdown file press `ctrl + shift + v ` then the file will be displayed with formatting. Pretty nice and convenient.
+
+
+
+## MISCH / IMAGES
+
+![Menu Icons](/images/menu_icons.png)
