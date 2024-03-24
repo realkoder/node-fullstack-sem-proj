@@ -165,6 +165,8 @@ TO fix the problem where env var is instantiated differently for mac and windows
 <br>
 
 ### LINKS
+`ESLINT - tool for making code more consistent and avoiding bugs - CLEAN CODE` -> https://eslint.org/docs/latest/use/getting-started
+
 `Fix issue with setting env var in script for mac / windows cross-env` -> https://www.npmjs.com/package/cross-env
 
 
