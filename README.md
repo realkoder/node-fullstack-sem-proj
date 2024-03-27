@@ -102,6 +102,12 @@ Get PID for port 8080
 lsof -i :8080
 ```
 
+The npx standard command is used to run the standard package, which is a JavaScript style linter.
+Checking Code Style: The standard package is a JavaScript linter that enforces consistent coding style and catches stylistic errors in your code.
+```bash
+npx standard
+```
+
 <br>
 
 ---
