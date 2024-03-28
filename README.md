@@ -171,15 +171,15 @@ TO fix the problem where env var is instantiated differently for mac and windows
 <br>
 
 ### LINKS
-`ESLINT - tool for making code more consistent and avoiding bugs - CLEAN CODE` -> https://eslint.org/docs/latest/use/getting-started
+`ESLINT: tool for making code more consistent and avoiding bugs - CLEAN CODE` -> https://eslint.org/docs/latest/use/getting-started
 
-`Fix issue with setting env var in script for mac / windows cross-env` -> https://www.npmjs.com/package/cross-env
-
-
-`Sending mails with NODEMAILER` -> https://www.nodemailer.com
+`CROSS-ENV: Fix issue with setting env var in script for mac / windows cross-env` -> https://www.npmjs.com/package/cross-env
 
 
-`Production process manager PM2 - if application crash it will reinstatiate with PM2` -> https://www.npmjs.com/package/pm2
+`MAIL: Sending mails with NODEMAILER` -> https://www.nodemailer.com
+
+
+`PM2: Production process manager PM2 - if application crash it will reinstatiate with PM2` -> https://www.npmjs.com/package/pm2
 
 
 ---
